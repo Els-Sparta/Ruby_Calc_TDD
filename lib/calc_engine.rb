@@ -16,8 +16,7 @@ class CalcEngine
     end
 
     def divide_two_numbers(num1, num2)
-      result = num1 / num2
-      "%.2f" % result
+     num1 / num2
     end
     # Advanced Calculator methods
     def power_of_two_numbers(num1, num2)
@@ -34,7 +33,7 @@ class CalcEngine
     end
 
     def imperial_bmi_function(weight, height)
-      result = (weight/height)/height
+      result = ((weight * 703)/height)/height
       "%.2f" % result
     end
     # Trip Calculator methods
@@ -107,7 +106,7 @@ class CalcEngine
       when "s"
       # if square root(s) was selected
         puts "Enter first value"
-        num1 = gets.chomp.to_i
+        num1 = gets.chomp.to_f
         puts "------------------------"
         puts sqrt_of_number(num1)
       else
