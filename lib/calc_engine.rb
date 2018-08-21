@@ -124,39 +124,53 @@ class CalcEngine
       operator = gets.chomp
       # Check which operator was selected
       case operator
-      # if "m" then work out BMI using metric units  
+      # if "m" then work out BMI using metric units
       when "m"
+        # Ask the user to enter their weight in kg
         puts "Enter your weight in kg"
         weight = gets.chomp.to_f
         puts "Enter your height in m"
+        # Ask the user to enter their height in m
         height = gets.chomp.to_f
         puts "------------------------"
+        # run the method to give the user their bmi
         puts metric_bmi_function(weight, height)
+      # if "i" then work out the BMI using imperial units
       when "i"
+        # Ask the user to enter their weight in pounds
         puts "Enter your weight in pounds"
         pounds = gets.chomp.to_f
+        # Ask the user to enter their height in inches
         puts "Enter your height in inches"
         height = gets.chomp.to_f
         puts "------------------------"
+        # run the method to give the user their bmi
         puts imperial_bmi_function(weight, height)
       else
+        # if an incorrect value is inputed for the operator
         puts "------------------------"
         puts "Incorrect input"
       end
-
+    # if the user selected "t" run this statement
     elsif calc_choice=="t"
+      # Tells the user what mode they are using
       puts "Trip Calculator"
-
+      # Ask the user to give the value of the distance of the trip in miles
       puts "Enter the distance of the trip in miles"
       distance = gets.chomp.to_f
+      # Ask the user to give the value of their cars miles per gallon
       puts "Enter your cars MPG"
       fuel_efficiency = gets.chomp.to_f
+      # Ask the user to give the value of the cost of gallons in pounds
       puts "Enter the cost of fuel per gallon in £s"
       cost_per_gallon = gets.chomp.to_f
       puts "Enter your average speed for the trip in mph"
+      # Ask the user to give the value of the average speed of the whole trip
       average_speed = gets.chomp.to_f
       puts "------------------------"
+      # print out the value for the time taken
       puts "The time take for the trip in hours: #{trip_time(distance, average_speed)}"
+      # print out the value for the cost of the trip
       puts "The cost of the trip in £s: #{trip_price(distance, fuel_efficiency, cost_per_gallon)}"
 
     end
